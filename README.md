@@ -1,29 +1,23 @@
-# install zsh using following command
+# Install necessary dependencies
+sudo apt install wget curl xclip git
 
--> sudo apt install wget curl xclip git
+# Install zsh
+sudo apt install zsh
 
-# install zsh using following command
+# Set your shell from bash to zsh
+sudo chsh -s $(which zsh)
 
--> sudo apt install zsh
+# Install oh-my-zsh
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
-# set your shell from bash tot zsh using following command
+# Install zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-# install oh-my-zsh using following command
+# Install zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
--> sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+# Install custom theme powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-# install autosuggestions for zsh using following command
-
--> git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-# install syntax highlighting for zsh using following command
-
--> git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-# install custom theme poweline10k using following command
-
--> git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
-# set the theme in your .zshrc file to the following theme
-
--> ZSH_THEME="powerlevel10k/powerlevel10k"
+# Set the theme in your .zshrc file to powerlevel10k
+ZSH_THEME="powerlevel10k/powerlevel10k"
